@@ -11,7 +11,7 @@ set PROXY_HTTP "http://$hostip:$port"
 # set -gx https_proxy "$PROXY_HTTP"
 # set -gx HTTPS_PROXY "$PROXY_HTTP"
 
-set -gx EDITOR lvim
+# set -gx EDITOR lvim
 
 function unset_proxy
     set -e http_proxy
@@ -29,13 +29,13 @@ end
 fzf_configure_bindings --directory=\cf
 bind \co ranger-cd
 
-alias ls="exa --group-directories-first --icons"
-alias la="exa -l -a --group-directories-first --icons"
-alias ll="exa -l --group-directories-first --icons"
-alias l.="exa -a --group-directories-first --icons | egrep '^\.'"                                     # show only dotfiles
+# alias ls="exa --group-directories-first --icons"
+# alias la="exa -l -a --group-directories-first --icons"
+# alias ll="exa -l --group-directories-first --icons"
+# alias l.="exa -a --group-directories-first --icons | egrep '^\.'"                                     # show only dotfiles
 
 alias ra="ranger-cd"
-alias vim="nvim"
+# alias vim="nvim"
 alias df="df -h"
 
 alias lg="lazygit"
@@ -50,10 +50,10 @@ alias nvd="watch -n 1 nvidia-smi"
 
 # ====== Copied from garuda's fish config
 ## Starship prompt
-set VIRTUAL_ENV_DISABLE_PROMPT "1"
-if status is-interactive
-   source ("/usr/bin/starship" init fish --print-full-init | psub)
-end
+# set VIRTUAL_ENV_DISABLE_PROMPT "1"
+# if status is-interactive
+#    source ("/usr/bin/starship" init fish --print-full-init | psub)
+# end
 
 # Fish command history
 function history
@@ -101,6 +101,6 @@ scheme set dr460nized
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval /home/aik2/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# eval /home/aik2/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
