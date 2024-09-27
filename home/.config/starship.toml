@@ -1,5 +1,7 @@
 ## FIRST LINE/ROW: Info & Status
 # First param ─┌
+"$schema" = 'https://starship.rs/config-schema.json'
+
 [username]
 format = " [╭─$user]($style) "
 show_always = true
@@ -8,9 +10,9 @@ style_user = "bold red"
 
 # Second param
 [hostname]
-disabled = true
-format = "[$hostname]($style) in "
-ssh_only = false
+disabled = false
+format = "on [$hostname]($style) in "
+ssh_only = true
 style = "bold dimmed red"
 trim_at = "-"
 
@@ -42,26 +44,6 @@ min_time = 1
 
 ## SECOND LINE/ROW: Prompt
 # Somethere at the beginning
-[battery]
-charging_symbol = ""
-disabled = true
-discharging_symbol = ""
-full_symbol = ""
-
-[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
-disabled = false
-style = "bold red"
-threshold = 15
-
-[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
-disabled = true
-style = "bold yellow"
-threshold = 50
-
-[[battery.display]]  # "bold green" style when capacity is between 10% and 30%
-disabled = true
-style = "bold green"
-threshold = 80
 
 # Prompt: optional param 1
 [time]
@@ -70,14 +52,24 @@ format = " 🕙 $time($style)\n"
 style = "bright-white"
 time_format = "%T"
 
+[shell]
+fish_indicator = "󰈺"
+powershell_indicator = "_"
+xonsh_indicator = ""
+bash_indicator = "ب"
+format = " [╰─$indicator]($style) "
+unknown_indicator = "*"
+style = "bold blue"
+disabled = false
+
 # Prompt: param 2
 [character]
-error_symbol = " [×](bold red)"
-success_symbol = " [╰─λ](bold red)"
+error_symbol = "[×](bold red)"
+success_symbol = "(bold red)"
 
 # SYMBOLS
 [status]
-disabled = false
+disabled = true
 format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
 map_symbol = true
 pipestatus = true

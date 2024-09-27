@@ -1,0 +1,38 @@
+[[manager.prepend_keymap]]
+on = ["<C-n>"]
+run = '''
+	shell 'dragon-drop -a -x "$@"' --confirm
+'''
+
+[[manager.prepend_keymap]]
+on = ["l"]
+run = "plugin --sync smart-enter"
+desc = "Enter the child directory, or open the file"
+
+[[manager.prepend_keymap]]
+on = ["R"]
+run = '''
+    shell "$@" --block --confirm
+'''
+desc = "Execute the scripts"
+
+[[manager.prepend_keymap]]
+on = ["J"]
+run = "arrow 5"
+
+[[manager.prepend_keymap]]
+on = ["K"]
+run = "arrow -5"
+
+[[manager.prepend_keymap]]
+on = ["<A-j>"]
+run = "seek 5"
+
+[[manager.prepend_keymap]]
+on = ["<A-k>"]
+run = "seek -5"
+
+[[input.prepend_keymap]]
+on = ["<Esc>"]
+run = "close"
+desc = "Cancel input"
